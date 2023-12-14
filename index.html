@@ -1,0 +1,428 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>DES CALCULATOR - Nino | Clyde | Joel | Roselyn | Gabriel | Ritchie | MaryJane</title>
+    <style>
+        /* DES Calculate Modal Css*/
+        .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 40px 20px;
+        border-radius: 5px;
+        border: 1px solid #888;
+        width: 40%;
+        padding: 30px 40px;
+        
+        }
+
+        /* The Close Button */
+        .close {
+        color: black;
+        float: right;
+        font-size: 28px;
+        margin-top: -35px;
+        font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+        color: #DD1313;
+        text-decoration: none;
+        cursor: pointer;
+        }
+
+        .modal .modal-content .header{
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .modal .modal-content .name{
+            color: #ADADAD;
+            font-size: 12px;
+            margin-top: -10px;
+        }
+        .modal .modal-content form{
+            margin-top: 40px;
+            
+        }
+        .modal .modal-content form.plaintext.key{
+            display: block;
+        }
+        .modal .modal-content form .key{
+            margin-top: 40px;
+        }
+        .modal .modal-content form .plaintext p{
+            font-size: 14px;
+            color: black;
+        }
+        .modal .modal-content form .key p{
+            font-size: 14px;
+            color: black;
+        }
+        .modal .modal-content form input{
+            margin-top: 5px;
+            height: 40px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #84888b;
+            padding: 0px 10px;
+        }
+        .modal .modal-content form input[type]{
+            font-weight: bold;
+        }
+        .modal .modal-content form input:hover{
+            border: 1px solid #DD1313;
+            color: #DD1313;
+        }
+
+        .modal .modal-content .button{
+            float: right;
+            
+
+        }
+        .modal .modal-content .button button{
+            width: 100px;
+            color: white;
+        }
+        .modal .modal-content .button .clear{
+            border: 1px solid #adadad;
+            background-color: transparent;
+            color: black;
+        }
+        .modal .modal-content .button .clear:hover{
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        /* Help modal css */
+
+        .modals {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 90%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-contents {
+        background-color: #fefefe;
+        margin: auto;
+        border-radius: 5px;
+        padding: 40px 20px;
+        border: 1px solid #888;
+        width: 40%;
+        }
+
+        /* The Close Button */
+        .closes {
+        color: black;
+        float: right;
+        font-size: 28px;
+        margin-top: -35px;
+        font-weight: bold;
+        }
+
+        .closes:hover,
+        .closes:focus {
+        color: #DD1313;
+        text-decoration: none;
+        cursor: pointer;
+        }
+        .modals .modal-contents{
+        width: 60%;
+        height: 500px;
+        }
+        .modals .modal-contents .header{
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .modals .modal-contents .name{
+            color: #ADADAD;
+            font-size: 12px;
+            margin-top: -10px;
+        }
+        .modals .modal-contents .text-content{
+            margin-top: 40px;
+            
+        }
+        .modals .modal-contents .text-content p{
+            color: black;
+            font-size: 13px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="spinner-cont" id="spinner">
+        <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div><br />
+        <h3 id="text"></h3>
+    </div>
+    <div class="side-bar">
+        <div class="content">
+            <img src="img/logo.png" alt="Logo" srcset="">
+            <br>
+            <br>
+            <p>Action</p>
+            <button id="myBtn" style="height: 50px; width: 95%"><img class="btn-img" src="img/8741078.png" alt="" srcset="" ><p class="btn-text">Encrypt</p></button>
+            <button id="myBtnss" style="background: black ; width: 95%; margin-top: 5px; height: 50px;" ><img class="btn-img" src="img/th.png" alt="" srcset="" ><p style="color: white;" class="btn-text">Decrypt</p></button>
+                <div id="myModal" class="modal">
+                <!-- Modal content -->
+                 <div class="modal-content" >
+                    <h2 >Encryption</h2>
+                    <span class="name">by NRCJGRM</span>
+                   <form action="">
+                    <div class="plaintext">
+                        <p>Plaintext</p>
+                        <input id='msg' type='text' value='' required oninput='stringToHexadecimal()'/>
+                    </div>
+                    <div class="key">
+                        <p>Key</p>
+                        <input id='key' type='text' value='' required oninput='stringToHexadecimal()'/>
+                    </div>
+                    <div style="display: flex; justify-content: space-around; margin-top: 3rem;">
+                        <button type="button" class="close" style="font-size: 16px; font-weight: 500; margin-left: 1rem; background: white; color: red">Close</button>
+                        <button type="button" class="enc" style="font-size: 14px; font-weight: 300; color: white" onclick="encryptDES()">Encrypt</button>
+                    </div>
+                   </form>
+                 </div>
+                </div>
+                <!----modal for decryption-->
+                <div id="myModalss" class="modal">
+                    <!-- Modal content -->
+                     <div class="modal-content">
+                        <h2>Decryption</h2>
+                        <span class="name">by NRCJGRM</span>
+                       <form  name="stuff" action="">
+                        <div class="plaintext">
+                            <p>Ciphertext</p>
+                            <input id='msg1' type='text' name="indata" value='' oninput='stringToHexadecimal1()'/>
+                            <input type="radio"style="display: none" name="intype"></input>
+                            <input type="radio"style="display: none" name="intype" checked="checked"></input>
+                            <div style="padding-top: 1rem; display: flex; flex-direction: row; gap: 4rem;">
+                                <div style="display: flex; flex-direction: row; align-items: center; position: relative;">
+                                    <label for="pText">Plaintext  </label>
+                                    <input type="radio" id="pText" name="type" style="position: absolute; left: 4.5rem; width: 25px " value="plaintext" checked>
+                                </div>
+                                <div style="display: flex; flex-direction: row; align-items: center; position: relative;">
+                                    <label for="hexa">Hexadecimal</label>
+                                    <input type="radio" id="hText" name="type" style="position: absolute; left: 7rem; width: 25px " value="hexa">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="key">
+                            <p>Key</p>
+                            <input id='key1' name="key1" type='text' value='' oninput='stringToHexadecimal1()'/>
+                        </div>
+                       </form>
+                       <div style="display: flex; justify-content: space-around; margin-top: 3rem;">
+                        <button type="button" class="closess" style="font-size: 16px; font-weight: 500; background: white; color: red">Close</button>
+                        <button type="button" onclick="decryptDES()" class="dec" style="font-size: 16px; font-weight: 300; color: white" >Decrypt</button>
+                       </div>
+                     </div>
+                    </div>
+            <button class="help" id="myBtns" style="background-color: transparent;"><img src="img/help_img.png" alt="" srcset="" style="width: 20px;margin-left: -140px;"><p style="color: black; margin-left: -70px; font-weight: 500; font-size: 12px; margin-top: -24px;">Help</p></button> 
+            <!-- The Modal -->
+            <div id="myModals" class="modals">
+              <!-- Modal content -->
+              <div class="modal-contents">
+                <span class="closes">&times;</span>
+                <p class="header">Data Encryption Standard Calculator(DESC)</p>
+                <span class="name">by NRCJGRM</span>
+                <div class="text-content" style="padding-top:50px;">
+                    <p style="font-size: 16px; font-weight: 300;"><b>Data Encryption Standard (DES)</b> is the most widely used block cipher in the world. It encrypts 64-bit data using a 64-bit key.</p>
+                </div>
+                <div class="text-content">
+                    <p style="font-size: 16px; font-weight: 300;"><b style="display: block;">Usage</b>Given a plaintext and a key, this application will compute the DES ciphertext, and log every step in the process. Simply type a hexadecimal value into one of the input boxes, and the output will update automatically.</p>
+                </div>
+              </div>
+            
+            </div>
+        </div>
+    </div>
+    <div class="nav-bar">
+        <div class="nav-text">
+            <p>Data Encryption Standard Calculator (DESC)</p>
+            <span class="name">by NRCJGRM</span>
+        </div>
+    </div>
+    <section class="container">
+        <h1 id="desType"></h1>
+        <div id='output'>
+            <div style="background: white; padding: 2rem; width: 98%; border-radius: 20px;  box-shadow: 1px 1px 5px rgba(0,0,0,.1)">
+                <h2>
+                    What is DES? Understanding Data Encryption Standard
+                </h2><br />
+                <p>
+                    DES (Data Encryption Standard) is an encryption algorithm experts consider outdated. It is a symmetric key block cipher, applying the same key to encrypt and decrypt information. <br /> <br />
+                    The main flaw or risk of this encryption strategy is its susceptibility to brute-force attacks. Due to the shorter key length of DES, modern computers could crack it. <br /> <br />
+                    However, while Triple DES (3DES) offered a safer key length, its usage will also halt in December 2023. <br /> <br />
+                </p><br /><br />
+                <h2>
+                    What Data Encryption Standard (DES) is 
+                </h2><br />
+                <p>
+                    DES is Data Encryption Standard: an algorithm meant to encrypt information and decrypt it using the same key. Thus, it is a symmetric key algorithm introduced in the early 1970s. <br /><br />
+                    During its existence, the National Institute of Standards and Technology (NIST) accepted DES as the solution for encrypting government computer data. <br /><br />
+                    Thus, at the time, DES was at its peak regarding adoption and security. This type of encryption process also spread into other areas, particularly those in need of robust encryption. <br /><br/ >
+                </p><br /><br />
+                <h2>
+                    How does DES work? 
+                </h2><br />
+                <p>
+                    We want to emphasize the following components of DES encryption, reflecting how it works. <br /><br />
+                    <strong>Summary: </strong>DES divides information into blocks, and every block consists of 64 bits. Every block completes the initial permutation, and its result gets split into two parts. <br /><br />
+                    The LPT and RPT parts proceed with the Feistel function for 16 rounds. After all rounds, the final permutation occurs and completes the encryption process.<br /><br />
+                    <div style="padding-left: 3rem;">
+                        <ul>
+                            <li>DES is a block cipher, meaning that it deals with data in blocks. It divides input text into 64-bit blocks.</li>
+                            <li>All blocks get encrypted using the secret key to turn data into 64-bit encrypted information. </li>
+                            <li>The encryption process completes 16 rounds of encryption. The decryption happens in the opposite order in which keys get applied. </li>
+                            <li>DES uses a 64-bit key, but eight bits get dedicated to parity checks. Thus, the actual key length of 56 bits is more accurate. </li>
+                            <li>The encryption creates different 48-bit subkeys for all 16 encryption rounds. Expansion-permutation is relevant in this process.</li>
+                        </ul>
+                    </div>
+                </p><br /><br />
+                <h2>
+                    What went wrong with the Data Encryption Standard? 
+                </h2><br />
+                <p>
+                    DES officially retired in 2005, after eight years of government agencies using it to safeguard sensitive data. Security concerns over its key size were the determining factors in its final exit.  <br /><br />
+                    <div style="padding-left: 3rem;">
+                        <ul>
+                            <li>The DES algorithm uses a 64-bit key for encryption and decryption. However, the process dedicates eight bits for parity checks. Thus, the true key length turns out to be 56 bits</li>
+                            <li>The 56-bit key needs up to 2^(56) (approximately 72 quadrillion) tries to find the key. While it might seem a lot, modern computers could complete brute-force attacks. </li>
+                            <li>In 1998, the Electronic Frontier Foundation (EFF) decoded DES-encrypted information in 56 hours. They would achieve the same result in 22 hours the following year.  </li>
+                            <li>Another suspicion arose with the US National Security Agency allegedly meddling with the DES.  </li>
+                        </ul>
+                    </div><br /><br />
+                    With evidence of risks in the DES algorithm piling, the world began shifting to new methods and longer key sizes. 
+                </p><br /><br />
+                <h2>
+                    What encryption algorithms replaced DES? 
+                </h2><br />
+                <p>
+                    DDES is a predecessor of the Advanced Encryption Standard (AES), currently used in modern encryption. AES is also a symmetric encryption cipher, and it applies the same keys for encryption and decryption.  <br /><br />
+                    AES is drastically more secure than DES since it offers 128-bit, 192-bit, or 256-bit keys. AES is also better than 3DES as it offers much better performance.  <br /><br />
+                    Thus, while limited use cases for DES or 3DES exist, AES is a much superior algorithm in most aspects.  <br /><br/ >
+                </p><br />
+            </div>
+        </div>
+        <div class="step8" style="margin-bottom: 20px;width: 98%; padding: 30px 30px;" id="step8">
+            <span id="textOutput" style="font-size: 15px; font-weight: 500;"></span>
+            <div class="box8" style="width: 50rem">
+                <input id='ciphertext' style="width: 40rem; border: none; font-size: 2rem; outline: none; font-weight: bold;" type='text' value='' readonly/>
+            </div>
+        </div>
+        <div class="step8" style="margin-bottom: 20px;width: 98%; padding: 30px 30px;" id="step9">
+            <span id="textOutput1" style="font-size: 15px; font-weight: 500;"></span>
+            <div class="box8" style="width: 50rem">
+                <input id='plaintext' style="width: 40rem; border: none; font-size: 2rem; outline: none; font-weight: bold;" type='text' value='' readonly/>
+            </div>
+        </div>
+       
+    </section> 
+    
+    <!---------Help button for modal -->
+    <script>
+        // Get the modal
+        var modals = document.getElementById("myModals");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtns");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("closes")[0];
+        
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+          modals.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modals.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modals) {
+            modals.style.display = "none";
+          }
+        }
+        
+    </script>
+        <!-------DES Calculate Button for modal ------->
+    <script>
+        var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+        btn.onclick = function() {
+        modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+        
+    </script>
+    <script>
+        var modalss = document.getElementById("myModalss");
+    // Get the button that opens the modal
+        var btnss = document.getElementById("myBtnss");
+
+    // Get the <span> element that closes the modal
+    var spanss = document.getElementsByClassName("closess")[0];
+    spanss.onclick = function() {
+        modalss.style.display = "none";
+    }
+    // When the user clicks the button, open the modal 
+        btnss.onclick = function() {
+        modalss.style.display = "block";
+    }
+
+   
+
+    // When the user clicks on <span> (x), close the modal
+        
+
+    // When the user clicks anywhere outside of the modal, close it
+    
+
+    </script>
+    <script src="script.js"></script>
+    <script src="script1.js"></script>
+</body>
+</html>
