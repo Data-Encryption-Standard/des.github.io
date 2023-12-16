@@ -76,12 +76,12 @@ function encrypt(msg, key, numSteps) {
     
     /* Step 0 */
     let step = 0;
-    let html = '<div style="background-color: white;; margin-right: 20px; padding: 40px 40px; border-radius: 20px; width: 30%;"><h3><span class="step" style="padding: 10px 20px; background-color: #DB6868; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 0:</span><br><br> Initialization</h3>';
-    html += 'Message: <br>' + msg + '<br>Key: <br>' + key +'</div>';
+    let html = '<div style="display: flex"><div style=" background-color: white; margin-right: 20px; padding: 40px 40px; border-radius: 20px; width: 40%;"><h3><span class="step" style="padding: 10px 20px; background-color: #DB6868; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 0:</span><br><br> Initialization</h3>';
+    html += 'Message: ' + msg + '<br>Key: ' + key +'</div>';
 
     /* Step 1 */
     if(step++ == numSteps) return html;
-    html += '<div style="background-color: white;  position: absolute; z-index: -1; margin-top: -268px; margin-buttom: 40px; margin-left: 330px; padding: 20px 40px; border-radius: 20px; width: 52.5%;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #6A68DB; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 1:</span> <br><br>Convert to binary</h3>';
+    html += '<br /><div style="background-color: white; z-index: -1; padding: 20px 40px; border-radius: 20px; width: 60%;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #6A68DB; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 1:</span> <br><br>Convert to binary</h3>';
 
     let base2 = {
         '0': '0000',
@@ -111,7 +111,7 @@ function encrypt(msg, key, numSteps) {
 
     /* Step 2 */
     if(step++ == numSteps) return html;
-    html += '<div style="background-color: white; margin-top: 20px; padding: 20px 40px; border-radius: 20px; width: 98.7%;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #FAA82D; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 2:</span><br><br> Permute the key through the PC-1 table</h3>';
+    html += '</div><div style="background-color: white; margin-top: 20px; padding: 20px 40px; border-radius: 20px; width: 100%;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #FAA82D; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 2:</span><br><br> Permute the key through the PC-1 table</h3>';
 
     html += 'Shuffle bits according to PC-1:<br><br>';
 
@@ -150,7 +150,7 @@ function encrypt(msg, key, numSteps) {
 
     /* Step 3 */
     if(step++ == numSteps) return html;
-    html += '<div style="background-color: white;margin-top:20px; padding: 20px 40px; border-radius: 20px; width: 98.7%;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #CB2E9F; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 3:</span> <br><br>Rotating each half</h3>Split the key in half, then left rotate each bit according to the table:<br><br>';
+    html += '<div style="background-color: white;margin-top:20px; padding: 20px 40px; border-radius: 20px; width: 100%;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #CB2E9F; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 3:</span> <br><br>Rotating each half</h3>Split the key in half, then left rotate each bit according to the table:<br><br>';
 
     let rotationTable = [1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1];
 
@@ -185,7 +185,7 @@ function encrypt(msg, key, numSteps) {
 
     /* Step 4 */
     if(step++ == numSteps) return html;
-    html += '<div style="background-color: white; padding: 20px 40px; border-radius: 20px; width: 98.7%;margin-top:20px;"><br><h3><span class="step" style="padding: 10px 20px; background-color: green; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 4:</span> <br><br>Concatenation</h3><br>';
+    html += '<div style="background-color: white; padding: 20px 40px; border-radius: 20px; width: 100%;margin-top:20px;"><br><h3><span class="step" style="padding: 10px 20px; background-color: green; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 4:</span> <br><br>Concatenation</h3><br>';
     html += 'Concatenate C and D:';
     let CD = [];
     for(let i = 0; i < 17; i++) {
@@ -199,7 +199,7 @@ function encrypt(msg, key, numSteps) {
 
     /* Step 5 */
     if(step++ == numSteps) return html;
-    html += '<div style="background-color: white; padding: 20px 40px; border-radius: 20px; width: 98.7%; margin-top: 20px;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #CB2E9F; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 5:</span> <br><br>Permute the key through the PC-2 table</h3><br>';
+    html += '<div style="background-color: white; padding: 20px 40px; border-radius: 20px; width: 100%; margin-top: 20px;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #CB2E9F; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 5:</span> <br><br>Permute the key through the PC-2 table</h3><br>';
 
     html += 'Shuffle bits according to PC-2 (48-bit):<br><br>';
 
@@ -243,7 +243,7 @@ function encrypt(msg, key, numSteps) {
 
     /* Step 6 */
     if(step++ == numSteps) return html;
-    html += '<div style="background-color: white; padding: 20px 40px; border-radius: 20px; width: 98.7%; margin-top: 20px;"><br><h3><span class="step" style="padding: 10px 20px; background-color: red; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 6:</span><br><br> Permute the message through IP</h3><br>';
+    html += '<div style="background-color: white; padding: 20px 40px; border-radius: 20px; width: 100%; margin-top: 20px;"><br><h3><span class="step" style="padding: 10px 20px; background-color: red; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 6:</span><br><br> Permute the message through IP</h3><br>';
     html += 'Shuffle bits according to the initial permutation (IP):<br><br>';
 
     const initialPermutation = [
@@ -286,7 +286,7 @@ function encrypt(msg, key, numSteps) {
 
     /* Step 7 */
     if(step++ == numSteps) return html;
-    html += '<div style="background-color: white; padding: 20px 40px; border-radius: 20px; width: 98.7%; margin-top: 20px;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #EB8151; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 7:</span><br><br> Encode the data</h3><br>';
+    html += '<div style="background-color: white; padding: 20px 40px; border-radius: 20px; width: 100%; margin-top: 20px;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #EB8151; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 7:</span><br><br> Encode the data</h3><br>';
     html += 'Splitting the resulting message into two halves:<br>';
 
     html += '<br>L<sub>0</sub> = ' + formatBinary(L[0]);
@@ -580,7 +580,7 @@ function encrypt(msg, key, numSteps) {
 
         /* Step 8 */
         if(step++ == numSteps) return html;
-        html += '<div style="background-color: white; padding: 20px 40px; border-radius: 20px; width: 98.7%; margin-top: 20px;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #124B4B; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step ' + step + ':</span> <br><br>Computing ROUND ' + (i + 1) + '</h3>';
+        html += '<div style="background-color: white; padding: 20px 40px; border-radius: 20px; width: 100%; margin-top: 20px;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #124B4B; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step ' + step + ':</span> <br><br>Computing ROUND ' + (i + 1) + '</h3>';
 
         let ER = E(R[i]);
         let KXORER = xor(K[i + 1], ER);
@@ -611,7 +611,7 @@ function encrypt(msg, key, numSteps) {
 
     /* Step 24 */
     if(step++ == numSteps) return html;
-    html += '<div style="background-color: white; padding: 20px 40px; border-radius: 20px; width: 98.7%; margin-top: 20px;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #5E64C7; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 24:</span> <br><br>Permute the encoded data through the IP<sup>-1</sup> table</h3><br>';
+    html += '<div style="background-color: white; padding: 20px 40px; border-radius: 20px; width: 100%; margin-top: 20px;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #5E64C7; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 24:</span> <br><br>Permute the encoded data through the IP<sup>-1</sup> table</h3><br>';
 
     html += 'Now that we have'
     html += '<br><br>L<sub>16</sub> = ' + 'R<sub>15</sub> = ' + formatBinary(L[16]);
@@ -660,7 +660,7 @@ function encrypt(msg, key, numSteps) {
 
     /* Step 25 */
     if(step++ == numSteps) return html;
-    html += '<div style="background-color: white; padding: 20px 40px; border-radius: 20px; width: 98.7%; margin-top: 20px;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #EB8151; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 25:</span> <br><br>Convert back into hexadecimal</h3><br><br>';
+    html += '<div style="background-color: white; padding: 20px 40px; border-radius: 20px; width: 100%; margin-top: 20px;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #EB8151; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 25:</span> <br><br>Convert back into hexadecimal</h3><br><br>';
 
     base2 = {
         '0000': '0',

@@ -183,13 +183,7 @@
     </div>
     <div class="side-bar">
         <div class="content">
-            <img src="img/logo.png" alt="Logo" srcset="">
-            <br>
-            <br>
-            <p>Action</p>
-            <button id="myBtn" style="height: 50px; width: 95%"><img class="btn-img" src="img/8741078.png" alt="" srcset="" ><p class="btn-text">Encrypt</p></button>
-            <button id="myBtnss" style="background: black ; width: 95%; margin-top: 5px; height: 50px;" ><img class="btn-img" src="img/th.png" alt="" srcset="" ><p style="color: white;" class="btn-text">Decrypt</p></button>
-                <div id="myModal" class="modal">
+            <div id="myModal" class="modal">
                 <!-- Modal content -->
                  <div class="modal-content" >
                     <h2 >Encryption</h2>
@@ -244,35 +238,35 @@
                        </div>
                      </div>
                     </div>
-            <button class="help" id="myBtns" style="background-color: transparent;"><img src="img/help_img.png" alt="" srcset="" style="width: 20px;margin-left: -140px;"><p style="color: black; margin-left: -70px; font-weight: 500; font-size: 12px; margin-top: -24px;">Help</p></button> 
-            <!-- The Modal -->
-            <div id="myModals" class="modals">
-              <!-- Modal content -->
-              <div class="modal-contents">
-                <span class="closes">&times;</span>
-                <p class="header">Data Encryption Standard Calculator(DESC)</p>
-                <span class="name">by NRCJGRM</span>
-                <div class="text-content" style="padding-top:50px;">
-                    <p style="font-size: 16px; font-weight: 300;"><b>Data Encryption Standard (DES)</b> is the most widely used block cipher in the world. It encrypts 64-bit data using a 64-bit key.</p>
+        </div>
+    </div>
+    <div style="position: sticky; position: -webkit-sticky;
+    top: 0;">
+        <div class="nav-bar" >
+            <div class="nav-text" style="display: flex;">
+                <div style="margin-top: -1rem;">
+                    <img src="img/logo.png" width="150px"/>
                 </div>
-                <div class="text-content">
-                    <p style="font-size: 16px; font-weight: 300;"><b style="display: block;">Usage</b>Given a plaintext and a key, this application will compute the DES ciphertext, and log every step in the process. Simply type a hexadecimal value into one of the input boxes, and the output will update automatically.</p>
+                <div>
+                    <p>Data Encryption Standard Calculator (DESC)</p>
+                    <span class="name">by NRCJGRM</span>
                 </div>
-              </div>
-            
+            </div>
+            <div>
+                <div class="des-btns" style="display: flex; align-items: center; gap: 0.5rem;">
+                    <button id="myBtn" style="height: 50px; width: 95%"><p class="btn-text">Encrypt</p></button>
+                    <button id="myBtnss" style="background: black ; width: 95%; margin-top: 5px; height: 50px;" ><p style="color: white;" class="btn-text">Decrypt</p></button>
+                </div>
             </div>
         </div>
     </div>
-    <div class="nav-bar">
-        <div class="nav-text">
-            <p>Data Encryption Standard Calculator (DESC)</p>
-            <span class="name">by NRCJGRM</span>
-        </div>
-    </div>
+    
     <section class="container">
+        
+        
         <h1 id="desType"></h1>
-        <div id='output'>
-            <div style="background: white; padding: 2rem; width: 98%; border-radius: 20px;  box-shadow: 1px 1px 5px rgba(0,0,0,.1)">
+        <div id='output' style="width: 100%;">
+            <div style="background: white; padding: 2rem; width: 100%; border-radius: 20px;  box-shadow: 1px 1px 5px rgba(0,0,0,.1)">
                 <h2>
                     What is DES? Understanding Data Encryption Standard
                 </h2><br />
@@ -331,15 +325,15 @@
                 </p><br />
             </div>
         </div>
-        <div class="step8" style="margin-bottom: 20px;width: 98%; padding: 30px 30px;" id="step8">
+        <div class="step8" style="margin-bottom: 20px;padding: 30px;" id="step8">
             <span id="textOutput" style="font-size: 15px; font-weight: 500;"></span>
-            <div class="box8" style="width: 50rem">
+            <div class="box8">
                 <input id='ciphertext' style="width: 40rem; border: none; font-size: 2rem; outline: none; font-weight: bold;" type='text' value='' readonly/>
             </div>
         </div>
-        <div class="step8" style="margin-bottom: 20px;width: 98%; padding: 30px 30px;" id="step9">
+        <div class="step8" style="margin-bottom: 20px;padding: 30px;" id="step9">
             <span id="textOutput1" style="font-size: 15px; font-weight: 500;"></span>
-            <div class="box8" style="width: 50rem">
+            <div class="box8">
                 <input id='plaintext' style="width: 40rem; border: none; font-size: 2rem; outline: none; font-weight: bold;" type='text' value='' readonly/>
             </div>
         </div>

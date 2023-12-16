@@ -215,12 +215,12 @@ function formatBinary(str) {
 function decrypt(msg, key, numSteps) {
     /*Step 0*/
     let step = 0;
-    let html = '<div style="background-color: white; height: 268px; margin-top:0px;margin-right: 20px; padding: 40px 40px; border-radius: 20px; width: 30%;"><h3><span class="step" style="padding: 10px 20px; background-color: #DB6868; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 0:</span><br><br> Initialization</h3>';
-    html += 'Ciphertext: ' + msg + '<br><br />Key: ' + key +'</div>';
+    let html = '<div style="display: flex"><div style=" background-color: white; margin-right: 20px; padding: 40px 40px; border-radius: 20px; width: 40%;"><h3><span class="step" style="padding: 10px 20px; background-color: #DB6868; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 0:</span><br><br> Initialization</h3>';
+    html += 'Message: ' + msg + '<br>Key: ' + key +'</div>';
 
-    /*Step 1*/
+    /* Step 1 */
     if(step++ == numSteps) return html;
-    html += '<div style="background-color: white;  position: absolute; z-index: -1; margin-top: -273px; margin-left: 330px; padding: 20px 40px; border-radius: 20px; width: 52.5%;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #6A68DB; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 1:</span> <br><br>Convert to binary</h3>';
+    html += '<br /><div style="background-color: white; z-index: -1; padding: 20px 40px; border-radius: 20px; width: 60%;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #6A68DB; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 1:</span> <br><br>Convert to binary</h3>';
 
     let base2 = {
         '0': '0000',
@@ -242,14 +242,15 @@ function decrypt(msg, key, numSteps) {
     }
 
     msg_2 = msg.split('').map(x => base2[x]).join('');
-    html += 'Ciphertext in binary (64-bit): ' + formatBinary(msg_2);
+    html += 'Message in binary (64-bit):<br>' + formatBinary(msg_2);
 
     key_2 = key.split('').map(x => base2[x]).join('');
-    html += '<br><br>Key in binary (64-bit): ' + formatBinary(key_2) + '</div>';
-    
+    html += '<br><br>Key in binary (64-bit):<br>' + formatBinary(key_2) + '</div>';
+
+
     /* Step 2 */
     if(step++ == numSteps) return html;
-    html += '<div style="background-color: white; margin-top: 20px; padding: 20px 40px; border-radius: 20px; width: 98.7%;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #FAA82D; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 2:</span><br><br> Permute the key through the PC-1 table</h3>';
+    html += '</div><div style="background-color: white; margin-top: 20px; padding: 20px 40px; border-radius: 20px; width: 100%;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #FAA82D; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 2:</span><br><br> Permute the key through the PC-1 table</h3>';
 
     html += 'Shuffle bits according to PC-1:<br><br>';
 
@@ -293,7 +294,7 @@ var step = 4;
 // add a labeled value to the text area
 function accumulate_output( str )
 {
-   html += '<div style="background-color: white; margin-top: 20px; padding: 20px 40px; border-radius: 20px; width: 98.7%;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #FAA82D; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step ' + step + '</span><br><br>' + str + '</h3><br />'
+   html += '<div style="background-color: white; margin-top: 20px; padding: 20px 40px; border-radius: 20px; width: 100%;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #FAA82D; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step ' + step + '</span><br><br>' + str + '</h3><br />'
     step++;
 }
 
@@ -530,7 +531,7 @@ function des_encrypt( inData, Key )
    var R = new Array( 33 );		// right half of current data
    var result = new Array( 65 );	// DES output
    var i;
-   html += '<div style="background-color: white; margin-top: 20px; padding: 20px 40px; border-radius: 20px; width: 98.7%;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #FAA82D; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 3</span><br><br>Rotating each half<br />Concatenation<br />Permute the key through the PC-2 table<br /> Permute the message through IP<br /> Encode the data</h3><br />'
+   html += '<div style="background-color: white; margin-top: 20px; padding: 20px 40px; border-radius: 20px; width: 100%;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #FAA82D; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 3</span><br><br>Rotating each half<br />Concatenation<br />Permute the key through the PC-2 table<br /> Permute the message through IP<br /> Encode the data</h3><br />'
    // do the initial key permutation
    permute( CD, Key, PC_1_perm );
    accumulate_bitstring( "CD[0]: ", CD, 7 );
@@ -583,7 +584,7 @@ function des_encrypt( inData, Key )
       tempData[i+32] = L[i];
    }
 
-   html += '<div style="background-color: white; margin-top: 20px; padding: 20px 40px; border-radius: 20px; width: 98.7%;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #FAA82D; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 20</span><br><br>Convert back into hexadecimal</h3><br />'
+   html += '<div style="background-color: white; margin-top: 20px; padding: 20px 40px; border-radius: 20px; width: 100%;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #FAA82D; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 20</span><br><br>Convert back into hexadecimal</h3><br />'
    accumulate_bitstring ("LR[16] ", tempData, 8 );
    
    // do final permutation and return result
