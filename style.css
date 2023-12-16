@@ -16,35 +16,11 @@ table, td {
 body{
     background-color: #F5F5FD;
 }
-.side-bar{
-    display: flex;
-    justify-content: center;
-    width: 20%;
-    height: 100vh;
-    background-color: white;
-    position: fixed;
-    z-index: 1;
-}
-.side-bar .content{
-    margin-left: 25px;
-
-}
-.side-bar .content img{
-    width: 200px;
-    height: auto;
-
-    
-}
-.side-bar .content p{
-    font-size: 12px;
-    color: #ADADAD;
-    margin-top: -20px;
-}
 .side-bar .content button{
     width: 220px;
     background-color: #DD1313;
     height: 42px;
-    border-radius: 7px;
+    border-radius: 30px;
     outline: none;
     border: none;
     margin-top: 20px;
@@ -78,10 +54,10 @@ body{
     height: 100px;
     width: 100%;
     background-color: white;
-    
-    padding-left: 22%;
+    padding: 5%;
     padding-top: 20px;
-    position: fixed;
+    display: flex;
+    justify-content: space-around;
 }
 .nav-bar .nav-text p{
     color: black;
@@ -93,8 +69,7 @@ body{
     font-size: 15px;
 }
 .container{
-    padding-left: 22%;
-    padding-top: 120px;
+    padding: 2%;
 }
 .container .firstcol .step1,.step0{
     display: inline-block;
@@ -391,11 +366,10 @@ body{
     background-color: white;
     border-radius: 20px;
     padding: 20px 20px;
-    width: 98.8%;
+    width: 100%;
     box-shadow: 1px 1px 5px rgba(0,0,0,.1);
     margin-left: 0px;
     margin-top: 20px;
-    width: 98%;
     display: none;
 }
 .container .step8 span{
@@ -955,8 +929,24 @@ body{
 }
 .container .step25 .box25 .plaintext p{
     margin-top: 20px;
-   
     margin-bottom: 20px;
+}
+
+.des-btns button {
+    padding: 1px 4rem;
+    background-color: #DD1313;
+    height: 42px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+}
+
+.des-btns button:hover{
+    background-color: #f13e3e;
+    box-shadow: 0px 0px 10px #f3b5b5;
 }
 
 
