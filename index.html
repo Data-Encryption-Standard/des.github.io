@@ -30,7 +30,6 @@
         border: 1px solid #888;
         width: 40%;
         padding: 30px 40px;
-        
         }
 
         /* The Close Button */
@@ -173,7 +172,14 @@
             color: black;
             font-size: 13px;
         }
-
+        @media only screen and (max-width: 736px) {
+            .modal-content {
+                width: 80%;
+            }
+            .modal-contents {
+                width: 80%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -240,106 +246,118 @@
                     </div>
         </div>
     </div>
-    <div style="position: sticky; position: -webkit-sticky;
-    top: 0;">
+    <div>
         <div class="nav-bar" >
-            <div class="nav-text" style="display: flex;">
-                <div style="margin-top: -1rem;">
-                    <img src="img/logo.png" width="150px"/>
+            <div class="nav-text" style="display: flex; align-items: center;">
+                <div style="margin-top: 1.5rem; display: flex; align-items: center">
+                    <img src="img/logo.png" width="150px" style="margin-top: -1rem;"/>
                 </div>
                 <div>
-                    <p>Data Encryption Standard Calculator (DESC)</p>
+                    <p class="first-title">Data Encryption Standard Calculator</p>
+                    <p class="second-title">DESC</p>
                     <span class="name">by NRCJGRM</span>
                 </div>
             </div>
-            <div>
-                <div class="des-btns" style="display: flex; align-items: center; gap: 0.5rem;">
-                    <button id="myBtn" style="height: 50px; width: 95%"><p class="btn-text">Encrypt</p></button>
-                    <button id="myBtnss" style="background: black ; width: 95%; margin-top: 5px; height: 50px;" ><p style="color: white;" class="btn-text">Decrypt</p></button>
+            
+        </div>
+    </div><br />
+    <div  style="display: flex; align-items: center; justify-content: center; width: 100%;" >
+        <div style="background: white; padding: 3rem; width: 81%; border-radius: 20px;  box-shadow: 1px 1px 5px rgba(0,0,0,.1)">
+            <div style="display: flex; justify-content: space-around; align-items: center; padding: 1rem">
+                <div>
+                    <h3 style="font-size: 2.5rem;">Data Encryption Standard</h3>
+                    <p style="color: #DD1313">Guarding secrets with the symphony of symmetric-key security.</p><br /><br /><br />
+                    <div class="des-btns1">
+                        <div class="des-btns ">
+                            <button id="myBtn"><p class="btn-text">Encrypt</p></button>
+                            <button id="myBtnss" style="border: 1px solid #DD1313; background: none; " ><p style="color: #DD1313;" class="btn-text">Decrypt</p></button>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 50%; padding: 1rem">
+                    <img src="https://img.freepik.com/premium-vector/password-laptop-password-is-protected-by-lock-illustration-isolated-flat-style_422344-1154.jpg" width="90%"/>
                 </div>
             </div>
         </div>
     </div>
-    
-    <section class="container">
+    <div style="display: flex; align-items: center; justify-content: center; width: 100%; ">
+        <div class="container">
+            <h1 id="desType"></h1>
+            <div id='output'>
+                <div style="background: white; padding: 2rem; width: 100%; border-radius: 20px;  box-shadow: 1px 1px 5px rgba(0,0,0,.1)">
+                    <h2>
+                        What is DES? Understanding Data Encryption Standard
+                    </h2><br />
+                    <p>
+                        DES (Data Encryption Standard) is an encryption algorithm experts consider outdated. It is a symmetric key block cipher, applying the same key to encrypt and decrypt information. <br /> <br />
+                        The main flaw or risk of this encryption strategy is its susceptibility to brute-force attacks. Due to the shorter key length of DES, modern computers could crack it. <br /> <br />
+                        However, while Triple DES (3DES) offered a safer key length, its usage will also halt in December 2023. <br /> <br />
+                    </p><br /><br />
+                    <h2>
+                        What Data Encryption Standard (DES) is 
+                    </h2><br />
+                    <p>
+                        DES is Data Encryption Standard: an algorithm meant to encrypt information and decrypt it using the same key. Thus, it is a symmetric key algorithm introduced in the early 1970s. <br /><br />
+                        During its existence, the National Institute of Standards and Technology (NIST) accepted DES as the solution for encrypting government computer data. <br /><br />
+                        Thus, at the time, DES was at its peak regarding adoption and security. This type of encryption process also spread into other areas, particularly those in need of robust encryption. <br /><br/ >
+                    </p><br /><br />
+                    <h2>
+                        How does DES work? 
+                    </h2><br />
+                    <p>
+                        We want to emphasize the following components of DES encryption, reflecting how it works. <br /><br />
+                        <strong>Summary: </strong>DES divides information into blocks, and every block consists of 64 bits. Every block completes the initial permutation, and its result gets split into two parts. <br /><br />
+                        The LPT and RPT parts proceed with the Feistel function for 16 rounds. After all rounds, the final permutation occurs and completes the encryption process.<br /><br />
+                        <div style="padding-left: 3rem;">
+                            <ul>
+                                <li>DES is a block cipher, meaning that it deals with data in blocks. It divides input text into 64-bit blocks.</li>
+                                <li>All blocks get encrypted using the secret key to turn data into 64-bit encrypted information. </li>
+                                <li>The encryption process completes 16 rounds of encryption. The decryption happens in the opposite order in which keys get applied. </li>
+                                <li>DES uses a 64-bit key, but eight bits get dedicated to parity checks. Thus, the actual key length of 56 bits is more accurate. </li>
+                                <li>The encryption creates different 48-bit subkeys for all 16 encryption rounds. Expansion-permutation is relevant in this process.</li>
+                            </ul>
+                        </div>
+                    </p><br /><br />
+                    <h2>
+                        What went wrong with the Data Encryption Standard? 
+                    </h2><br />
+                    <p>
+                        DES officially retired in 2005, after eight years of government agencies using it to safeguard sensitive data. Security concerns over its key size were the determining factors in its final exit.  <br /><br />
+                        <div style="padding-left: 3rem;">
+                            <ul>
+                                <li>The DES algorithm uses a 64-bit key for encryption and decryption. However, the process dedicates eight bits for parity checks. Thus, the true key length turns out to be 56 bits</li>
+                                <li>The 56-bit key needs up to 2^(56) (approximately 72 quadrillion) tries to find the key. While it might seem a lot, modern computers could complete brute-force attacks. </li>
+                                <li>In 1998, the Electronic Frontier Foundation (EFF) decoded DES-encrypted information in 56 hours. They would achieve the same result in 22 hours the following year.  </li>
+                                <li>Another suspicion arose with the US National Security Agency allegedly meddling with the DES.  </li>
+                            </ul>
+                        </div><br /><br />
+                        With evidence of risks in the DES algorithm piling, the world began shifting to new methods and longer key sizes. 
+                    </p><br /><br />
+                    <h2>
+                        What encryption algorithms replaced DES? 
+                    </h2><br />
+                    <p>
+                        DDES is a predecessor of the Advanced Encryption Standard (AES), currently used in modern encryption. AES is also a symmetric encryption cipher, and it applies the same keys for encryption and decryption.  <br /><br />
+                        AES is drastically more secure than DES since it offers 128-bit, 192-bit, or 256-bit keys. AES is also better than 3DES as it offers much better performance.  <br /><br />
+                        Thus, while limited use cases for DES or 3DES exist, AES is a much superior algorithm in most aspects.  <br /><br/ >
+                    </p><br />
+                </div>
+            </div>
+            <div class="step8" style="margin-bottom: 20px;padding: 30px;" id="step8">
+                <span id="textOutput" style="font-size: 15px; font-weight: 500;"></span>
+                <div class="box8">
+                    <input id='ciphertext' style="width: 40rem; border: none; font-size: 2rem; outline: none; font-weight: bold;" type='text' value='' readonly/>
+                </div>
+            </div>
+            <div class="step8" style="margin-bottom: 20px;padding: 30px;" id="step9">
+                <span id="textOutput1" style="font-size: 15px; font-weight: 500;"></span>
+                <div class="box8">
+                    <input id='plaintext' style="width: 40rem; border: none; font-size: 2rem; outline: none; font-weight: bold;" type='text' value='' readonly/>
+                </div>
+            </div>
         
-        
-        <h1 id="desType"></h1>
-        <div id='output' style="width: 100%;">
-            <div style="background: white; padding: 2rem; width: 100%; border-radius: 20px;  box-shadow: 1px 1px 5px rgba(0,0,0,.1)">
-                <h2>
-                    What is DES? Understanding Data Encryption Standard
-                </h2><br />
-                <p>
-                    DES (Data Encryption Standard) is an encryption algorithm experts consider outdated. It is a symmetric key block cipher, applying the same key to encrypt and decrypt information. <br /> <br />
-                    The main flaw or risk of this encryption strategy is its susceptibility to brute-force attacks. Due to the shorter key length of DES, modern computers could crack it. <br /> <br />
-                    However, while Triple DES (3DES) offered a safer key length, its usage will also halt in December 2023. <br /> <br />
-                </p><br /><br />
-                <h2>
-                    What Data Encryption Standard (DES) is 
-                </h2><br />
-                <p>
-                    DES is Data Encryption Standard: an algorithm meant to encrypt information and decrypt it using the same key. Thus, it is a symmetric key algorithm introduced in the early 1970s. <br /><br />
-                    During its existence, the National Institute of Standards and Technology (NIST) accepted DES as the solution for encrypting government computer data. <br /><br />
-                    Thus, at the time, DES was at its peak regarding adoption and security. This type of encryption process also spread into other areas, particularly those in need of robust encryption. <br /><br/ >
-                </p><br /><br />
-                <h2>
-                    How does DES work? 
-                </h2><br />
-                <p>
-                    We want to emphasize the following components of DES encryption, reflecting how it works. <br /><br />
-                    <strong>Summary: </strong>DES divides information into blocks, and every block consists of 64 bits. Every block completes the initial permutation, and its result gets split into two parts. <br /><br />
-                    The LPT and RPT parts proceed with the Feistel function for 16 rounds. After all rounds, the final permutation occurs and completes the encryption process.<br /><br />
-                    <div style="padding-left: 3rem;">
-                        <ul>
-                            <li>DES is a block cipher, meaning that it deals with data in blocks. It divides input text into 64-bit blocks.</li>
-                            <li>All blocks get encrypted using the secret key to turn data into 64-bit encrypted information. </li>
-                            <li>The encryption process completes 16 rounds of encryption. The decryption happens in the opposite order in which keys get applied. </li>
-                            <li>DES uses a 64-bit key, but eight bits get dedicated to parity checks. Thus, the actual key length of 56 bits is more accurate. </li>
-                            <li>The encryption creates different 48-bit subkeys for all 16 encryption rounds. Expansion-permutation is relevant in this process.</li>
-                        </ul>
-                    </div>
-                </p><br /><br />
-                <h2>
-                    What went wrong with the Data Encryption Standard? 
-                </h2><br />
-                <p>
-                    DES officially retired in 2005, after eight years of government agencies using it to safeguard sensitive data. Security concerns over its key size were the determining factors in its final exit.  <br /><br />
-                    <div style="padding-left: 3rem;">
-                        <ul>
-                            <li>The DES algorithm uses a 64-bit key for encryption and decryption. However, the process dedicates eight bits for parity checks. Thus, the true key length turns out to be 56 bits</li>
-                            <li>The 56-bit key needs up to 2^(56) (approximately 72 quadrillion) tries to find the key. While it might seem a lot, modern computers could complete brute-force attacks. </li>
-                            <li>In 1998, the Electronic Frontier Foundation (EFF) decoded DES-encrypted information in 56 hours. They would achieve the same result in 22 hours the following year.  </li>
-                            <li>Another suspicion arose with the US National Security Agency allegedly meddling with the DES.  </li>
-                        </ul>
-                    </div><br /><br />
-                    With evidence of risks in the DES algorithm piling, the world began shifting to new methods and longer key sizes. 
-                </p><br /><br />
-                <h2>
-                    What encryption algorithms replaced DES? 
-                </h2><br />
-                <p>
-                    DDES is a predecessor of the Advanced Encryption Standard (AES), currently used in modern encryption. AES is also a symmetric encryption cipher, and it applies the same keys for encryption and decryption.  <br /><br />
-                    AES is drastically more secure than DES since it offers 128-bit, 192-bit, or 256-bit keys. AES is also better than 3DES as it offers much better performance.  <br /><br />
-                    Thus, while limited use cases for DES or 3DES exist, AES is a much superior algorithm in most aspects.  <br /><br/ >
-                </p><br />
-            </div>
-        </div>
-        <div class="step8" style="margin-bottom: 20px;padding: 30px;" id="step8">
-            <span id="textOutput" style="font-size: 15px; font-weight: 500;"></span>
-            <div class="box8">
-                <input id='ciphertext' style="width: 40rem; border: none; font-size: 2rem; outline: none; font-weight: bold;" type='text' value='' readonly/>
-            </div>
-        </div>
-        <div class="step8" style="margin-bottom: 20px;padding: 30px;" id="step9">
-            <span id="textOutput1" style="font-size: 15px; font-weight: 500;"></span>
-            <div class="box8">
-                <input id='plaintext' style="width: 40rem; border: none; font-size: 2rem; outline: none; font-weight: bold;" type='text' value='' readonly/>
-            </div>
-        </div>
-       
-    </section> 
-    
+        </div> 
+    </div>
     <!---------Help button for modal -->
     <script>
         // Get the modal
