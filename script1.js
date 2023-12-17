@@ -215,12 +215,12 @@ function formatBinary(str) {
 function decrypt(msg, key, numSteps) {
     /*Step 0*/
     let step = 0;
-    let html = '<div style="display: flex"><div style=" background-color: white; margin-right: 20px; padding: 40px 40px; border-radius: 20px; width: 40%;"><h3><span class="step" style="padding: 10px 20px; background-color: #DB6868; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 0:</span><br><br> Initialization</h3>';
+    let html = '<div class="flex-step" style="display: flex"><div style=" background-color: white; margin-right: 20px; padding: 40px 40px; border-radius: 20px; width: 100%;"><h3><span class="step" style="padding: 10px 20px; background-color: #DB6868; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 0:</span><br><br> Initialization</h3>';
     html += 'Message: ' + msg + '<br>Key: ' + key +'</div>';
 
     /* Step 1 */
     if(step++ == numSteps) return html;
-    html += '<br /><div style="background-color: white; z-index: -1; padding: 20px 40px; border-radius: 20px; width: 60%;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #6A68DB; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 1:</span> <br><br>Convert to binary</h3>';
+    html += '<br /><div style="background-color: white; z-index: -1; padding: 20px 40px; border-radius: 20px; width: 100%;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #6A68DB; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 1:</span> <br><br>Convert to binary</h3>';
 
     let base2 = {
         '0': '0000',
