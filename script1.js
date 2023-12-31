@@ -531,7 +531,7 @@ function des_encrypt( inData, Key )
    var R = new Array( 33 );		// right half of current data
    var result = new Array( 65 );	// DES output
    var i;
-   html += '<div style="background-color: white; margin-top: 20px; padding: 20px 40px; border-radius: 20px; width: 100%;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #FAA82D; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 3</span><br><br>Rotating each half<br />Concatenation<br />Permute the key through the PC-2 table<br /> Permute the message through IP<br /> Encode the data</h3><br />'
+   html += '<div style="background-color: white; margin-top: 20px; padding: 20px 40px; border-radius: 20px; width: 100%;"><br><h3><span class="step" style="padding: 10px 20px; background-color: #FAA82D; color: white; border-radius: 20px; font-weight: 500; font-size: 14px;">Step 3</span><br />Concatenation<br /> Encode the data</h3><br />'
    // do the initial key permutation
    permute( CD, Key, PC_1_perm );
    accumulate_bitstring( "CD[0]: ", CD, 7 );
